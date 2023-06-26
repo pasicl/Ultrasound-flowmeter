@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PulsedNMR</class>
+ <widget class="QMainWindow" name="PulsedNMR">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PulsedNMR</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>600</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="plotWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="plotLayout"/>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="controlWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+       </property>
+      <item row="0" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+        
+	   </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="freqLlabel">
+         <property name="text">
+          <string>Frequency, MHz</string>
+         </property>
+        </widget>     
+       </item>
+       <item row="1" column="1">
+        <widget class="QDoubleSpinBox" name="freqValue">
+         <property name="decimals">
+          <number>4</number>
+         </property>
+         <property name="maximum">
+          <double>62.500000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.0001000000000</double>
+         </property>
+         <property name="value">
+          <double>0.975000000000000</double>
+         </property>
+        </widget>
+
+
+       </item>   
+       <item row="2" column="0">
+        <widget class="QLabel" name="PulsesLabel">
+         <property name="text">
+          <string>Number of pulses</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSpinBox" name="numPulses">       
+          <property name="maximum">
+          <number>100000</number>
+         </property>          
+          <property name="value">
+           <number>80</number> 
+         </property>
+        </widget>
+        
+        
+       </item>  
+       <item row="3" column="0">
+        <widget class="QLabel" name="RepetititonsLabel">
+         <property name="text">
+          <string>Pulses in each direction</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QDoubleSpinBox" name="repPulses">
+         <property name="decimals">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <double>20</double>
+         </property>
+         <property name="singleStep">
+          <double>1</double>
+         </property>
+         <property name="value">
+          <double>2</double>
+         </property>
+        </widget>
+        
+        
+       </item>   
+       <item row="4" column="0">
+        <widget class="QLabel" name="avgLabel">
+         <property name="text">
+          <string>Number of averages per flow rate</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="avgValue">       
+         <property name="value">
+          <number>10</number> 
+         </property>          
+         <property name="maximum">
+          <number>100</number>
+         </property>
+        </widget>        
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="awidthLabel">
+         <property name="text">
+          <string>Acquisition window length, us</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QDoubleSpinBox" name="awidthValue">
+         <property name="decimals">
+          <number>1</number>
+         </property>
+         <property name="minimum">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>500000.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>200000.00000000000</double>
+         </property>
+        </widget>
+
+ 
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="deltaLabel">
+         <property name="text">
+          <string>Repeatition time, ms</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QSpinBox" name="deltaValue">
+         <property name="minimum">
+          <double>0.1</double>
+         </property>
+         <property name="maximum">
+          <double>10000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.001</double>
+         </property>
+         <property name="value">
+          <double>500</double>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="rateLabel">
+         <property name="text">
+          <string>Sample rate, kSPS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="rateValue"/>
+        </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="IFLlabel">
+         <property name="text">
+          <string>Intermediate Frequency, Hz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QDoubleSpinBox" name="IFValue">
+         <property name="decimals">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <double>625000</double>
+         </property>
+         <property name="singleStep">
+          <double>1</double>
+         </property>
+         <property name="value">
+          <double>3125</double>
+         </property>
+        </widget>
+       
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="WaitTime">
+         <property name="text">
+          <string>Wait time, s</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QSpinBox" name="wait_time">
+         <property name="minimum">
+          <double>0</double>
+         </property>
+         <property name="maximum">
+          <double>1000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.001</double>
+         </property>
+         <property name="value">
+          <double>20</double>
+         </property>
+        </widget>       
+       
+       
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="addrLabel">
+         <property name="text">
+          <string>IP address</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLineEdit" name="addrValue">
+         <property name="text">
+          <string>169.254.15.156</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="13" column="1">
+        <widget class="QPushButton" name="startButton">
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
